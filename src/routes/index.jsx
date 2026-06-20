@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import useAuth from "./hooks/useAuth";
-import { authRoutes } from "./routes/authRoutes";
-import { userRoutes } from "./routes/userRoutes";
-import { adminRoutes } from "./routes/adminRoutes";
-import NotFound from "./pages/advices/NotFound";
-import NotAllowed from "./pages/advices/NotAllowed";
+import useAuth from "../hooks/useAuth";
+import { authRoutes } from "./authRoutes";
+import { userRoutes } from "./userRoutes";
+import { adminRoutes } from "./adminRoutes";
+import NotFound from "../pages/advices/NotFound";
+import NotAllowed from "../pages/advices/NotAllowed";
 
 export default function AppRoutes() {
   const { auth } = useAuth();

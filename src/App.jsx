@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import apiPromise from "./api/api"; // Importa a Promise exportada pelo setupApi()
-import AppRoutes from "./Routes"; // Seu componente principal de rotas
+import AppRoutes from "./routes"; // Seu componente principal de rotas
 import { LoadingProvider } from "./context/LoadingContext";
 import { AuthProvider } from "./context/AuthContext";
 import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
