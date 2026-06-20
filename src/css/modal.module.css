@@ -1,0 +1,166 @@
+.trigger {
+  cursor: pointer;
+  border: none;
+  border-style: none;
+  text-decoration: none;
+  color: #0048adff;
+  background: #00000000;
+}
+
+.heading {
+  padding: 30px;
+}
+
+.heading ul {
+  display: flex;
+  list-style: circle;
+  flex-direction: column;
+  gap: 4px;
+}
+/* Fundo escurecido */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  animation: overlayFadeOut 0.25s ease forwards;
+}
+
+.overlay[data-state="open"] {
+  animation: overlayFadeIn 0.25s ease forwards;
+}
+
+/* Caixa do modal */
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 400px;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: contentHide 0.25s ease forwards;
+}
+
+.contentTwo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: fit-content;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: contentHide 0.25s ease forwards;
+}
+
+.contentThree {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 600px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: contentHide 0.25s ease forwards;
+}
+
+.politicalContent {
+  overflow-y: auto;
+  max-height: 60vh;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.politicalContent h2 {
+  font-size: 20px;
+  color: rgb(53, 52, 52);
+}
+
+.contentThree[data-state="open"] {
+  animation: contentShow 0.25s ease forwards;
+}
+
+.contentTwo[data-state="open"] {
+  animation: contentShow 0.25s ease forwards;
+}
+
+.content[data-state="open"] {
+  animation: contentShow 0.25s ease forwards;
+}
+
+.text {
+  padding-left: 20px;
+}
+
+.text ul {
+  padding-left: 25px;
+}
+
+.spacingBottom {
+  margin-bottom: 20px;
+}
+
+.termsContainer {
+  margin-bottom: 20px;
+}
+
+.termsContainer h2 {
+  font-size: 20px;
+  color: rgb(53, 52, 52);
+}
+
+/* Keyframes */
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlayFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -52%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes contentHide {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -52%) scale(0.95);
+  }
+}

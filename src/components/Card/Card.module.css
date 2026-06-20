@@ -1,0 +1,125 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 352px;
+  padding: 32px;
+  border-radius: 10px;
+  background-color: #ffff;
+  flex: 1 0 30%; /* cada item ocupa ~30% da largura da linha */
+  box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1f; /* shadow-xs */
+}
+
+.cardTwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 352px;
+  padding: 32px;
+  border-radius: 10px;
+  background-color: #ffff;
+  flex-basis: calc(50% - 10px);
+  box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1f; /* shadow-xs */
+}
+
+.cardThree {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  height: 270px;
+  width: 270px;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: #ffff;
+  box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1f; /* shadow-xs */
+}
+
+.cardThree .flexEnd {
+  display: flex;
+  height: 100%;
+  justify-content: end;
+  align-items: end;
+}
+
+.cardThree p {
+  font-size: 12px;
+}
+
+.cardHeading {
+  display: flex;
+  align-items: center;
+  color: #0048adff;
+  gap: 16px;
+}
+
+.leftAlign {
+  justify-content: left;
+  align-items: normal;
+  text-align: left;
+}
+
+.image {
+  width: 250px;
+  border-radius: 6px;
+  border-width: 1px;
+  border-color: #dee1e6ff; /* neutral-300 */
+  border-style: solid;
+}
+
+.hidden {
+  display: none;
+}
+
+.fontColor {
+  color: #0048adff;
+}
+
+p {
+  margin: 0;
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #565d6dff;
+}
+
+.alterCardMetric {
+  font-size: 36px;
+  color: #171a1fff;
+  margin: 0;
+}
+
+.alterHeading {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.spacing {
+  margin-bottom: 25px;
+}
+
+.spacing p {
+  margin: 0;
+}
+.card img,
+.card svg,
+.cardTwo img,
+.cardTwo svg {
+  display: block;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 480px) {
+  /* Aqui dentro você coloca os estilos específicos para celular */
+
+  .card {
+    width: 100%; /* exemplo: card ocupa toda a largura no mobile */
+    padding: 16px;
+  }
+
+}

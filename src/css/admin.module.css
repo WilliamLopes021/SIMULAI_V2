@@ -1,0 +1,572 @@
+.adminSection {
+  padding-top: 40px;
+}
+
+.adminCardContainer {
+  margin-top: 4px; /* aproxima ainda mais os cards entre si */
+}
+
+header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.chatArea {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.chatBox {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  height: 260px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.inputArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #dee1e6ff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 8px 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputArea:focus-within {
+  border-color: #004aad;
+  box-shadow: 0 0 0 2px rgba(0, 74, 173, 0.1);
+}
+
+.inputArea input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  font-family: "Inter", sans-serif;
+}
+
+.inputArea input::placeholder {
+  color: #8a8989;
+}
+
+/* botão azul */
+.inputArea button {
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.inputArea button:hover {
+  background-color: #003380;
+  transform: translateY(-1px);
+}
+
+.metricsSection {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.metricsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px; /* distância entre os cards */
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.metricCard {
+  flex: 1;
+  min-width: 300px;
+  max-width: 340px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 36px 28px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.metricIcon {
+  font-size: 20px;
+  color: #555;
+}
+
+.metricTitle {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.metricValue {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0044cc;
+  margin-bottom: 10px;
+}
+
+.metricDescription {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.adminCardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.adminCardsRow {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+.adminCardsRow > * {
+  width: 500px;
+  height: 250px;
+}
+
+.titleWithButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.buttonsArea {
+  display: flex;
+  gap: 12px;
+}
+
+.bigButton {
+  padding: 10px 18px;
+  font-size: 15px;
+  height: 42px;
+  border-radius: 8px;
+}
+
+.adminAddInfo {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.filtersRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* SELECT estilizado */
+.select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between; /* um vai pra esquerda, outro pra direita */
+  align-items: center; /* alinha verticalmente */
+  width: 100%;
+}
+
+/* MEDIDAS CAUTELARES*/
+
+.commentCardDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  height: 160px;
+  width: 352px;
+  padding: 32px;
+  border-radius: 10px;
+  background-color: #ffff;
+  flex: 1 0 30%; /* cada item ocupa ~30% da largura da linha */
+  box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1f; /* shadow-xs */
+}
+
+.commentCardDisplay h2 {
+  font-size: 18px;
+  line-height: 5px;
+  font-weight: 600;
+  color: #171a1fff; /* neutral-900 */
+}
+
+.commentCardDisplay span {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 800;
+  color: #0047abff; /* primary-500 */
+}
+
+.commentCardDisplay p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #565d6dff; /* neutral-600 */
+}
+
+.commentTable {
+  display: flex;
+}
+
+.tableContainer {
+  width: 100%;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.tableContainerTwo {
+  width: 100%;
+  padding: 0 clamp(12px, 4vw, 60px);
+  overflow-x: auto;
+}
+
+.customTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
+}
+
+.customTable thead th {
+  text-align: left;
+  padding: 14px 10px;
+  font-size: 14px;
+  color: #555;
+  background-color: #f3f3f3;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.customTable tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.customTable td {
+  padding: 16px 10px;
+  vertical-align: middle;
+}
+
+/* Coluna do usuário */
+.userCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userCell img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* COMENTÁRIO — controla o tamanho */
+.commentCell {
+  max-width: 420px; /* ajuste aqui o limite horizontal */
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+/* Se quiser comentar em apenas 1 linha com reticências, use isto:
+.comment-cell {
+  max-width: 420px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
+
+/* Status badgets */
+.badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+}
+
+.badge.Aprovado {
+  background-color: #2ecc71;
+}
+
+.badge.Pendente {
+  background-color: #f1c40f;
+}
+
+.badge.Rejeitado {
+  background-color: #e74c3c;
+}
+
+/* Botões */
+.actionCell {
+  display: flex;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Container e cards */
+.adminSection {
+  padding: 40px 80px;
+}
+
+.adminCardContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.adminCardsRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.commentCardDisplay {
+  flex: 1 1 30%;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  text-align: center;
+}
+
+/* Botões principais */
+.titleWithButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.buttonsArea {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.bigButton {
+  min-width: 140px;
+}
+
+/* Tabela */
+.tableContainer {
+  overflow-x: auto;
+  margin-top: 24px;
+}
+
+.customTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.customTable th,
+.customTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+.userCell {
+  width: 15%;
+}
+
+.commentCell {
+  width: 40%;
+}
+
+.actionCell button {
+  margin-right: 8px;
+  margin-bottom: 4px;
+}
+
+/* Filtros */
+.filtersRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ======= MEDIA QUERIES ======= */
+@media (max-width: 1024px) {
+  .adminSection {
+    padding: 24px 32px;
+  }
+
+  .adminCardsRow {
+    justify-content: center;
+  }
+
+  .commentCardDisplay {
+    flex: 1 1 45%;
+    margin-bottom: 16px;
+  }
+
+  .titleWithButtons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .buttonsArea {
+    justify-content: flex-start;
+  }
+
+  .customTable {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .adminSection {
+    padding: 16px 20px;
+  }
+
+  .commentCardDisplay {
+    flex: 1 1 100%;
+  }
+
+  .filtersRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .titleWithButtons {
+    align-items: center;
+  }
+
+  .buttonsArea {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .bigButton {
+    min-width: 120px;
+  }
+
+  .customTable {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .adminSection {
+    padding: 12px 12px;
+  }
+
+  .customTable {
+    min-width: 400px;
+  }
+
+  .customTable th,
+  .customTable td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .userCell {
+    width: 20%;
+  }
+
+  .commentCell {
+    width: 50%;
+  }
+
+  .actionCell button {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
+
+/* ================= Ajuste para tabela ficar rente ================== */
+
+.adminCardContainer {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 12px; /* Pequeno padding lateral para não colar na borda */
+  box-sizing: border-box;
+}
+
+.tableContainer {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: auto; /* Scroll horizontal caso a tabela seja maior que a tela */
+  box-sizing: border-box;
+}
+
+/* Opcional: melhora a responsividade para tablets e celulares */
+@media (max-width: 1024px) {
+  .tableContainer {
+    padding: 0 12px !important;
+  }
+
+  .customTable {
+    width: 100%;
+    min-width: 0; /* Permite encolher conforme a tela */
+  }
+}
+
+@media (max-width: 768px) {
+  .customTable {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .customTable {
+    width: 100%;
+    min-width: 0;
+  }
+}

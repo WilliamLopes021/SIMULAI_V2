@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+/* NAVBAR PRINCIPAL */
+.navbar {
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  box-shadow:
+    0 0 1px #171a1f12,
+    0 0 2px #171a1f1f;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  font-family: "Inter", sans-serif;
+  position: relative;
+
+  /* animação de leve fade + sliding */
+  animation: navbarFadeIn 0.5s ease forwards;
+}
+
+@keyframes navbarFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logoContainer {
+  padding: 2px 0;
+  width: 200px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.04);
+}
+
+/* MENU CONTAINER */
+.menuContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+/* MENU DESKTOP */
+.headerMenu {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-left: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+/* BOTÕES À DIREITA */
+.navButtons {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+/* ITENS DO MENU */
+.headerMenuItem {
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+  color: #565d6d;
+  padding: 8px 14px;
+  transition: all 0.25s ease;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Sub-linha animada */
+.headerMenuItem::after {
+  content: "";
+  height: 2px;
+  width: 0%;
+  background: #0047ab;
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.headerMenuItem:hover::after {
+  width: 60%;
+}
+
+.headerMenuItem:hover {
+  color: #0047ab;
+  transform: translateY(-2px);
+}
+
+.selected {
+  font-weight: 700;
+  color: #0047ab;
+}
+
+.selected::after {
+  width: 70%;
+}
+
+.linkReset {
+  text-decoration: none;
+  color: inherit;
+}
+
+.userInfoDisplay {
+  font-size: 14px;
+  line-height: 20px;
+  color: #565d6d;
+  border-radius: 4px;
+}
+
+.userInfoBox {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  gap: 2px;
+
+  /* animação suave ao aparecer */
+  animation: fadeInInfo 0.4s ease forwards;
+}
+
+@keyframes fadeInInfo {
+  from {
+    opacity: 0;
+    transform: translateX(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* HAMBÚRGUER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  z-index: 20;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: #333;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* MENU MOBILE */
+@media (max-width: 968px) {
+  .navbar {
+    height: 80px;
+    padding: 0 1rem;
+  }
+
+  .image {
+    width: 240px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .selected::after {
+    width: 70%;
+    left: 40%;
+  }
+
+  /* menu fechado */
+  .menuContainer {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 260px;
+    background: white;
+    flex-direction: column;
+    padding: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: none;
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  /* menu aberto com animação */
+  .menuContainer.open {
+    display: flex;
+    animation: slideDown 0.35s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .headerMenu {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .headerMenuItem {
+    padding: 0.9rem;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 6px;
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .headerMenuItem:hover {
+    background: #f1f3f7;
+    transform: translateX(5px);
+  }
+
+  /* botões mobile */
+  .navButtons {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+    animation: fadeInButtons 0.4s ease forwards;
+  }
+
+  @keyframes fadeInButtons {
+    from {
+      opacity: 0;
+      transform: translateX(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .navButtons button {
+    font-size: 13px;
+    padding: 8px;
+  }
+}

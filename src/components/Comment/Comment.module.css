@@ -1,0 +1,63 @@
+.commentBox {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  padding: 25px;
+  border-radius: 16px;
+  border-width: 1px;
+  border-color: #dee1e6ff; /* neutral-300 */
+  border-style: solid;
+  box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1f;
+  flex: 1 0 30%; /* cada item ocupa ~30% da largura da linha */
+  overflow-wrap: break-word; /* quebra palavras muito longas */
+  white-space: normal;
+}
+
+.commentBox img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.heading {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.commentInfo p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+  color: #565d6dff;
+}
+
+.name {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #171a1fff;
+  margin: 0;
+}
+
+.rating {
+  padding: 5px 0 10px 0;
+  margin-left: 10px;
+}
+
+.date {
+  color: #565d6dff;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 352px;
+  padding: 32px;
+  border-radius: 10px;
+  background-color: #ffff;
+  flex: 1 0 30%; /* cada item ocupa ~30% da largura da linha */
+  box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1f; /* shadow-xs */
+}
