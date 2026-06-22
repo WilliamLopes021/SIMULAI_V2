@@ -83,7 +83,7 @@ A organização do código segue um padrão de responsabilidades bem definidas, 
 - `/components`: Componentes React reutilizáveis e genéricos.
 - `/context`: Definições e implementações dos Contexts da aplicação.
 - `/css`: Arquivos CSS globais e variáveis de estilo.
-- `/hooks`: Custom Hooks React para lógica reutilizável.
+- `/hooks`: Custom Hooks React para lógica reutilizável. 
 - `/pages`: Componentes de página, que representam as diferentes telas da aplicação.
 - `/routes`: Definição e organização das rotas da aplicação.
 

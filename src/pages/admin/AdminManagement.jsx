@@ -23,13 +23,14 @@ export default function AdminManagenment() {
 
   const getAllAdmins = async () => {
     try {
-      const data = await adminService.getAllManagers();
+      await adminService.getAllManagers();
 
-      if (!data.success) {
-        toast.error("Falha ao listar administradores");
-      }
+      // if (!data.success) {
+      //   toast.error("Falha ao listar administradores");
+      // }
 
-      return data.data;
+      // return data.data;
+      return [];
     } catch (error) {
       console.log(error.message);
       toast.error("Erro ao listar administradores");
@@ -121,23 +122,29 @@ export default function AdminManagenment() {
                   </tr>
                 </thead>
                 <tbody>
-                  {admins.map((a) => (
-                    <tr key={a._id}>
-                      <td>{a.name}</td>
-                      <td>{a.email}</td>
-                      <td>{a.role}</td>
-                      <td>
-                        <Button
-                          color="bg-red"
-                          text={"Excluir"}
-                          onClick={() => {
-                            setIsConfirmModalOpen(true);
-                            setDeletedId(a._id);
-                          }}
-                        />
-                      </td>
+                  {admins.length > 0 ? (
+                    admins.map((a) => (
+                      <tr key={a._id}>
+                        <td>{a.name}</td>
+                        <td>{a.email}</td>
+                        <td>{a.role}</td>
+                        <td>
+                          <Button
+                            color="bg-red"
+                            text={"Excluir"}
+                            onClick={() => {
+                              setIsConfirmModalOpen(true);
+                              setDeletedId(a._id);
+                            }}
+                          />
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan={4}>Nenhum administrador encontrado.</td>
                     </tr>
-                  ))}
+                  )}
                 </tbody>
               </table>
 

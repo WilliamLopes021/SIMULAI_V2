@@ -1,9 +1,4 @@
-import {
-  createContext,
-  useState,
-  useEffect,
-  useCallback,
-} from "react";
+import { createContext, useState, useEffect, useCallback } from "react";
 import { jwtDecode } from "jwt-decode";
 import {
   setAccessTokenGetter,
@@ -74,7 +69,7 @@ export function AuthProvider({ children }) {
     } catch (error) {
       console.error(
         "Falha ao invalidar token no backend durante o logout:",
-        error
+        error,
       );
     }
     setAuth(null);
@@ -122,4 +117,3 @@ export function AuthProvider({ children }) {
     </AuthContext.Provider>
   );
 }
-

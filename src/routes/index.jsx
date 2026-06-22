@@ -12,8 +12,7 @@ export default function AppRoutes() {
 
   const router = createBrowserRouter([
     ...authRoutes,
-    ...userRoutes,
-    ...(isAdmin ? adminRoutes : []),
+    ...(isAdmin ? adminRoutes : userRoutes),
     { path: "*", element: <NotFound /> },
     { path: "/not-allowed", element: <NotAllowed /> },
   ]);

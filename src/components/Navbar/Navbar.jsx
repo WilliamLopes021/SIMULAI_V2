@@ -59,19 +59,19 @@ export default function Navbar() {
             const path = item === "Home" ? "/" : `/${slugify(item)}`;
             const isActive = location.pathname === path;
             return (
-              <li
-                key={index}
-                className={`${styles.headerMenuItem} ${
-                  isActive ? styles.selected : ""
-                }`}
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-              >
-                <Link to={path} className={styles.linkReset}>
-                  {item}
-                </Link>
-              </li>
+              <Link to={path} className={styles.linkReset}>
+                <li
+                  key={index}
+                  className={`${styles.headerMenuItem} ${
+                    isActive ? styles.selected : ""
+                  }`}
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
+                >
+                  <a>{item}</a>
+                </li>
+              </Link>
             );
           })}
         </ul>

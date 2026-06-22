@@ -1,12 +1,7 @@
 import globalcss from "../../css/global.module.css";
 import banner from "../../assets/AboutImageBanner.png";
 import clsx from "clsx";
-import { LuLightbulb } from "react-icons/lu";
-import { LuUsers } from "react-icons/lu";
-import { MdOutlineHandshake } from "react-icons/md";
-import { GoDependabot, GoLightBulb } from "react-icons/go";
-import { FaRegStar } from "react-icons/fa6";
-import { GoTrophy } from "react-icons/go";
+import { missionValuesInfo, journeyMilestonesInfo } from "../../const/AboutPageInfo";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Card from "../../components/Card/Card";
@@ -42,181 +37,32 @@ export default function About() {
           <section className={globalcss.cardSection}>
             <h2 className={cardTitle}> Nossa Missão & Valores</h2>
             <div className={globalcss.cardContainer}>
-              <Card
-                title="Inovação"
-                description="Estamos constantemente explorando novas fronteiras da IA para oferecer as ferramentas mais avançadas e eficazes."
-                Icon={() => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                    }}
-                  >
-                    <LuLightbulb size={48} color="#0048ADFF" />
-                  </div>
-                )}
-                align="left"
-                display={1}
-              />
-              <Card
-                title="Centrado no Usuário"
-                description="O sucesso dos nossos usuários é a nossa prioridade. Projetamos soluções que realmente transformam vidas e carreiras."
-                Icon={() => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                    }}
-                  >
-                    <LuUsers size={48} color="#0048ADFF" />
-                  </div>
-                )}
-                align="left"
-                display={1}
-              />
-              <Card
-                title="Integridade"
-                description="Operamos com total transparência e honestidade, construindo confiança com a nossa comunidade."
-                Icon={() => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                    }}
-                  >
-                    <MdOutlineHandshake size={48} color="#0048ADFF" />
-                  </div>
-                )}
-                align="left"
-                display={1}
-              />
+              {missionValuesInfo.map((info, index) => (
+                <Card
+                  key={`mission-${index}`}
+                  title={info.title}
+                  description={info.description}
+                  Icon={info.Icon}
+                  align="left"
+                  display={info.display}
+                />
+              ))}
             </div>
           </section>
 
           <section className={globalcss.featureSection}>
             <h2 className={cardTitle}> Nossa Jornada & Marcos</h2>
-            <div className={globalcss.cardContainer}>
-              <Card
-                title="Fundação da Empresa"
-                description="Estamos constantemente explorando novas fronteiras da IA para oferecer as ferramentas mais avançadas e eficazes."
-                Icon={() => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                    }}
-                  >
-                    <FaRegStar size={48} color="#00BDD6FF" />
-                    <span style={{ color: "#00BDD6FF", fontWeight: "bold" }}>
-                      2020
-                    </span>
-                  </div>
-                )}
-                align="left"
-                display={1}
-              />
-
-              <Card
-                title="Lançamento do MVP"
-                description="Lançamos a primeira versão do nosso assistente de IA, recebendo feedback valioso de nossos usuários beta."
-                Icon={() => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                    }}
-                  >
-                    <GoTrophy size={48} color="#00BDD6FF" />
-                    <span style={{ color: "#00BDD6FF", fontWeight: "bold" }}>
-                      2021
-                    </span>
-                  </div>
-                )}
-                align="left"
-              />
-              <Card
-                title="Atingimos 100.000 Usuários"
-                description="Celebramos nosso crescimento, alcançando uma base de usuários significativa e impactando milhares de carreiras."
-                Icon={() => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                    }}
-                  >
-                    <LuUsers size={48} color="#00BDD6FF" />
-                    <span style={{ color: "#00BDD6FF", fontWeight: "bold" }}>
-                      2022
-                    </span>
-                  </div>
-                )}
-                align="left"
-                display={1}
-              />
-              <Card
-                title="Introdução de Novas Ferramentas de IA"
-                description="Expandimos nossos recursos com análises de voz e feedback comportamental, aprimorando ainda mais a experiência."
-                Icon={() => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                    }}
-                  >
-                    <GoLightBulb size={48} color="#00BDD6FF" />
-                    <span style={{ color: "#00BDD6FF", fontWeight: "bold" }}>
-                      2023
-                    </span>
-                  </div>
-                )}
-                align="left"
-              />
-              <Card
-                title="Parcerias Estratégicas"
-                description="Firmamos colaborações com grandes empresas de RH, ampliando nosso alcance e oferta de oportunidades."
-                Icon={() => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                    }}
-                  >
-                    <MdOutlineHandshake size={48} color="#00BDD6FF" />
-                    <span style={{ color: "#00BDD6FF", fontWeight: "bold" }}>
-                      2024
-                    </span>
-                  </div>
-                )}
-                align="left"
-                display={1}
-              />
-              <Card
-                title="Visão para o Futuro"
-                description="Continuaremos a evoluir, integrando as mais recentes inovações em IA para ajudar você a alcançar seus sonhos profissionais."
-                Icon={() => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                    }}
-                  >
-                    <GoDependabot size={48} color="#00BDD6FF" />
-                    <span style={{ color: "#00BDD6FF", fontWeight: "bold" }}>
-                      2025
-                    </span>
-                  </div>
-                )}
-                align="left"
-              />
+            <div className={globalcss.cardGrid}>
+              {journeyMilestonesInfo.map((info, index) => (
+                <Card
+                  key={`journey-${index}`}
+                  title={info.title}
+                  description={info.description}
+                  Icon={info.Icon}
+                  align="left"
+                  display={info.display}
+                />
+              ))}
             </div><br />
           </section>
           <section className={globalcss.specialSection}>

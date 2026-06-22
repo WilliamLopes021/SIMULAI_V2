@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { FaCalendarAlt, FaLayerGroup, FaStar } from "react-icons/fa";
 import clsx from "clsx";
 import toast from "react-hot-toast";
 import userService from "../../api/services/userService";
@@ -8,10 +7,10 @@ import styles from "../../css/admin.module.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Column from "../../components/Graphics/Column";
 import LineGraphic from "../../components/Graphics/Line";
+import UserMetrics from "../../components/Admin/Users/UserMetrics";
 
 export default function UserManagement() {
   const [metrics, setMetrics] = useState({ media: {}, ageMetrics: [] });
-  const bannerText = clsx(globalcss.poppinsBold, globalcss.bannerText);
   const cardTitle = clsx(globalcss.poppinsBold, globalcss.textCenter);
   const centered = clsx(globalcss.centerElement, globalcss.miniCardContainer);
   const centerElement = clsx(
@@ -22,7 +21,7 @@ export default function UserManagement() {
 
   const userMetrics = async () => {
     try {
-      const { media, age_distribution, NovemberRate, OctoberRate } =
+      const { media, age_distribution, } =
         await userService.getMetrics();
 
       const ageMetrics = Object.entries(age_distribution).map(
@@ -38,7 +37,7 @@ export default function UserManagement() {
         media,
         ageMetrics,
       };
-    } catch (err) {
+    } catch {
       toast.error("Erro ao listar métricas!");
       return { media: {}, ageMetrics: [] };
     }
@@ -51,45 +50,14 @@ export default function UserManagement() {
   return (
     <>
       <Navbar />
-      <div className={`${globalcss.mainContainer} ${globalcss.pageTopSpacing}`}>
+      <div className={`${globalcss.mainContainer}`}>
         <header>
           <h2 className={cardTitle}>Métricas do Usuário</h2>
         </header>
 
         <main>
           <section className={styles.metricsSection}>
-            <div className={styles.metricsContainer}>
-              <div className={styles.metricCard}>
-                <FaCalendarAlt className={styles.metricIcon} />
-                <h3 className={styles.metricTitle}>Média de Idade</h3>
-                <p className={styles.metricValue}>
-                  {metrics && metrics.media.age}
-                </p>
-                <p className={styles.metricDescription}>
-                  Dados demográficos da base de usuários
-                </p>
-              </div>
-
-              <div className={styles.metricCard}>
-                <FaLayerGroup className={styles.metricIcon} />
-                <h3 className={styles.metricTitle}>Nível Médio</h3>
-                <p className={styles.metricValue}>Nível 7.2</p>
-                <p className={styles.metricDescription}>
-                  Progresso geral do usuário
-                </p>
-              </div>
-
-              <div className={styles.metricCard}>
-                <FaStar className={styles.metricIcon} />
-                <h3 className={styles.metricTitle}>Classificações Médias</h3>
-                <p className={styles.metricValue}>
-                  {metrics && metrics.media.rate} / 5 estrelas
-                </p>
-                <p className={styles.metricDescription}>
-                  Satisfação geral do usuário
-                </p>
-              </div>
-            </div>
+              <UserMetrics metrics={metrics} />
           </section>
           <section className={centerElement}>
             <div className={centered}>

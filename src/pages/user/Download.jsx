@@ -5,11 +5,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
 import Card from "../../components/Card/Card";
-import img1 from "../../assets/DownloadImage.jpeg";
-import img2 from "../../assets/DownloadImage2.jpeg";
-import img3 from "../../assets/DownloadImage3.jpeg";
-import img4 from "../../assets/DownloadImage4.jpeg";
-import img5 from "../../assets/DownloadImage7.jpeg";
+import { cardInfo } from "../../const/DownloadPageInfo";
 
 export default function Download() {
   const bannerText = clsx(globalcss.poppinsBold, globalcss.bannerText);
@@ -45,42 +41,20 @@ export default function Download() {
               Funcionalidades que Impulsionam seu Sucesso
             </h2>
             <div className={globalcss.cardContainer}>
-              <Card
-                title="Feedback Personalizado"
-                description="Receba análises detalhadas e sugestões de melhoria após cada sessão de prática."
-                Icon={img1}
-                iconType="img"
-                display={1}
-              />
-              <Card
-                title="Simulação de Entrevista"
-                description="Pratique com cenários de entrevisa realistas e perguntas comuns do setor."
-                Icon={img2}
-                iconType="img"
-                display={1}
-              />
-              <Card
-                title="Análise de Desempenho"
-                description="Monitore o seu progresso ao longo do tempo com gráficos e métricas claras."
-                Icon={img3}
-                iconType="img"
-                display={1}
-              />
-              <Card
-                title="Acompanhamento de progresso"
-                description="Visualize sus pontos fortes e fracos para focar no que realmente importa"
-                Icon={img4}
-                iconType="img"
-                display={1}
-              />
-              <Card
-                title="Dicas Especializadas"
-                description="Obtenha conselhos práticos para aprimorar suas habilidades"
-                Icon={img5}
-                iconType="img"
-                display={1}
-              />
-            </div><br />
+              {cardInfo.map((info, index) => {
+                return (
+                  <Card
+                    key={`${index}${info.title}`}
+                    title={info.title}
+                    description={info.description}
+                    Icon={info.Icon}
+                    iconType="img"
+                    display={1}
+                  />
+                );
+              })}
+            </div>
+            <br />
           </section>
           <section className={globalcss.specialSection}>
             <h2 className={textCenter}>
@@ -98,4 +72,3 @@ export default function Download() {
     </>
   );
 }
-

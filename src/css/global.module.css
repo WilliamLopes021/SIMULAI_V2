@@ -69,9 +69,18 @@ header {
 .cardContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 32px;
-  flex-wrap: wrap;
   margin-top: 64px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
 }
 
 .cardSection {
@@ -102,7 +111,9 @@ header {
   min-height: 270px;
   padding: 32px clamp(20px, 4vw, 56px);
   border-radius: 16px;
-  box-shadow: 0px 0px 1px #171a1f12, 0px 0px 2px #171a1f1f;
+  box-shadow:
+    0px 0px 1px #171a1f12,
+    0px 0px 2px #171a1f1f;
 }
 
 .commentContainer {
@@ -133,14 +144,6 @@ header {
   -webkit-box-orient: vertical;
   line-clamp: 3;
   overflow: hidden;
-}
-
-.commentProfileText {
-  margin-left: 12px;
-}
-
-.commentProfileText p {
-  margin: 0;
 }
 
 .specialSection {
@@ -553,6 +556,11 @@ header {
     align-items: center;
     gap: 20px;
   }
+
+  .cardGrid {
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Tablet pequeno / mobile grande */
@@ -613,6 +621,11 @@ header {
   .aside {
     padding: 0 16px;
   }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 /* Mobile */
@@ -665,4 +678,3 @@ header {
     padding: 0 12px;
   }
 }
-
